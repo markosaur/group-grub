@@ -4,7 +4,7 @@ export default class Available extends Component {
     render() {
         return (
             <div>
-                
+                Available
             </div>
         )
     }

@@ -4,7 +4,7 @@ export default class MyGroups extends Component {
     render() {
         return (
             <div>
-                
+                MyGroups  
             </div>
         )
     }
