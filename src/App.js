@@ -6,17 +6,16 @@ import Groups from './Components/Groups/Groups';
 import Orders from './Components/Orders/Orders';
 import Create from './Components/Groups/Crerate'
 import Available from './Components/Groups/Available';
-
+import routes from './routes'
+import Login from './Components/Auth/Login';
+import Register from './Components/Auth/Register';
 
 
 function App() {
   return (
     <div className="App">
-      <Home/>
-      <Groups/>
-      <Create/>
-      <Available/>
-      <Orders/>
+      
+      {routes}
     </div>
   );
 }

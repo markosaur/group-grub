@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import Login from './Login'
-import Register from './Register'
+import {Link} from 'react-router-dom'
 
 export default class extends Component {
     render() {
         return (
             <div>
                 Home
-                <Login/>
-                <Register/>
+                <Link to= '/login' ><button>Login</button></Link>
+                <Link to= '/register' ><button>Register</button></Link>
             </div>
         )
     }
