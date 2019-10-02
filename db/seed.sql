@@ -19,3 +19,7 @@ insert into users
 values
 ('Marko', true),
 ('Joe', false);
+
+
+select * from users
+where username = 'Marko'
