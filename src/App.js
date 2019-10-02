@@ -9,12 +9,13 @@ import Available from './Components/Groups/Available';
 import routes from './routes'
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
+import Nav from './Components/Nav'
 
 
 function App() {
   return (
     <div className="App">
-      
+      <Nav/>
       {routes}
     </div>
   );
