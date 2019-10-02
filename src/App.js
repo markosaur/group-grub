@@ -1,32 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Available from './Components/Available/Available';
-import Create from './Components/Create/Create';
-import Dashboard from './Components/Dashboard/Dashboard';
+import Home from './Components/Auth/Home';
 import Groups from './Components/Groups/Groups';
-import Login from './Components/Login/Login';
-import MyGroups from './Components/MyGroups/MyGroups';
 import Orders from './Components/Orders/Orders';
-import Register from './Components/Register/Register';
+import Create from './Components/Groups/Crerate'
+import Available from './Components/Groups/Available';
+
 
 
 function App() {
   return (
     <div className="App">
-      <Available/>
-      <Create/>
-      <Dashboard/>
+      <Home/>
       <Groups/>
-      <Login/>
-      <MyGroups/>
+      <Create/>
+      <Available/>
       <Orders/>
-      <Register/>
-
     </div>
   );
 }
 
 export default App;
-    import Available from './Components/Available/Available';
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Dashboard extends Component {
+export default class MyGroups extends Component {
     render() {
         return (
             <div>
-                Dashboard
+               My Groups
             </div>
         )
     }
