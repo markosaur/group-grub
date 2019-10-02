@@ -15,7 +15,10 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         //Store the new user in the database
-        const userId = await db.add_user({username})
+        const usId = await db.add_user({username})
+        db.add_hash({users_id:usId[0].users_id, hash}).catch(err => {
+            return res.sendStatus(503)
+        })
     
 
     }
