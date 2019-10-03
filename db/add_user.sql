@@ -1,5 +1,5 @@
 insert into users
 (username, is_admin)
 values
-(${username}, false),
-returning users_id;
+(${username}, false)
+RETURNING users_id;
