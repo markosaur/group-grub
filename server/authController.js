@@ -53,5 +53,10 @@ module.exports = {
         //now to send it back to the front end
         res.status(200)
         .send({message: 'Logged In', user: req.session.user, loggedIn: true})
+    },
+
+    logout(req, res) {
+        req.session.destroy()
+        res.status(200).send({message: 'Logged out', loggedIn: false})
     }
 }
