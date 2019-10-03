@@ -15,10 +15,19 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         //Store the new user in the database
-        const usId = await db.add_user({username})
-        db.add_hash({users_id:usId[0].users_id, hash}).catch(err => {
+        const userId = await db.add_user({username})
+        db.add_hash({users_id:userId[0].users_id, hash}).catch(err => {
             return res.sendStatus(503)
         })
+
+        //store the new user in sessions
+        req.session.user = {
+            username,
+            userId: userId[0].users_id
+        }
+        res
+            .status(201)
+            .send({message: 'Welcome', user: req.session.user, loggedIn: true})
     
 
     }
