@@ -1,25 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './Components/Auth/Home';
-import Groups from './Components/Groups/Groups';
-import Orders from './Components/Orders/Orders';
-import Create from './Components/Groups/Crerate'
-import Available from './Components/Groups/Available';
-import routes from './routes'
-import Login from './Components/Auth/Login';
-import Register from './Components/Auth/Register';
 import Nav from './Components/Nav'
+import routes from './routes'
+import {withRouter} from 'react-router-dom' 
+
+class App extends Component { 
+  constructor(props){
+    super(props)
+  }
+  // console.log(props)
+  render(){
+
+    const navigation = this.props.location.pathname
+    let comp;
+
+    if(navigation ==='/' || navigation ==='/login' || navigation === '/register'){
+      comp = null
+    } else {
+      comp = <Nav/>
+    }
 
 
-function App() {
   return (
     <div className="App">
-      <Nav/>
+      {comp}
       {routes}
     </div>
   );
 }
+}
 
-export default App;
-
+export default withRouter (App);

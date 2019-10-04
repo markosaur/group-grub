@@ -15,6 +15,7 @@ export const updateUser = (userObj) => {
     }
 }
 
+
 //Reducer Function
 const reducer = (state = initialState, action) => {
     switch(action.type) {

@@ -4,10 +4,11 @@ module.exports = {
     async register(req, res) {
         const db = req.app.get('db')
         const {username, password} = req.body
+        console.log(username, password)
 
         //check to see if the user has already registered a username
         const user = await db.find_username(username)
-        
+        console.log(user)
         // if the username is already registered, stop the function
         if(user[0])
             return res.status(200).send({message: 'Username is already in use'})
@@ -16,6 +17,7 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
         //Store the new user in the database
         const userId = await db.add_user({username})
+        console.log(userId)
         db.add_hash({users_id:userId[0].users_id, hash}).catch(err => {
             return res.sendStatus(503)
         })
@@ -26,8 +28,9 @@ module.exports = {
             userId: userId[0].users_id
         }
         res
-            .status(201)
-            .send({message: 'Welcome', user: req.session.user, loggedIn: true})
+            .status(201).send({message: 'Welcome', user: req.session.user, loggedIn: true})
+            console.log(req.session.user)
+
     
 
     },
@@ -59,4 +62,4 @@ module.exports = {
         req.session.destroy()
         res.status(200).send({message: 'Logged out', loggedIn: false})
     }
-}
+} 
