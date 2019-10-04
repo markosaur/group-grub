@@ -82,3 +82,10 @@ select g.groups_name, u.username, o.item, o.price from orders o
 join users u on u.users_id = o.users_id 
 join groups g on g.groups_id = o.groups_id
 where g.groups_id = 1;
+
+-- This is the query rough draft to query for each of the groups one user has joined 
+select g.groups_name
+from users u
+join myGroups mg on mg.users_id = u.users_id
+join groups g on g.groups_id = mg.groups_id
+where u.users_id = 1;
