@@ -7,7 +7,7 @@ const initialState = {
 //Action Consts
 const UPDATE_USER = 'UPDATE_USER'
 
-//ACtion Builders
+//Action Builders
 export const updateUser = (userObj) => {
     return{
         type: UPDATE_USER,
