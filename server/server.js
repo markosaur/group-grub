@@ -4,6 +4,7 @@ const session = require('express-session')
 const massive = require('massive')
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env
 authCtrl = require('./authController')
+groupsCtrl = require('./groupsController')
 
 const app = express()
 
@@ -18,6 +19,9 @@ app.use(session({
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.delete('/auth/logout', authCtrl.logout)
+
+//Group endpoints
+app.get('/api/groups/user', groupsCtrl.getUserGroups)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

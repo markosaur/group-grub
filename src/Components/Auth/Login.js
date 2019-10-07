@@ -28,10 +28,11 @@ class Login extends Component {
         if (res.data.user) {
             this.props.updateUser(res.data.user)
             this.props.history.push('/groups')
-        }
+            console.log(this.props.history)
+        }else{
         alert('You have entered an invalid username or password')
     }
-
+    }
     render() {
         return (
             <div>
