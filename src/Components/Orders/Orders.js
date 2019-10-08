@@ -6,8 +6,17 @@ export default class Orders extends Component {
     constructor(){
         super();
         this.state = {
-            groobies: []
+            groobies: [],
+            post: false,
+            item: '',
+            price: 0
         };
+    }
+
+    handleToggle = () => {
+        this.setState({
+            edit: !this.state.post
+        })
     }
 
     async componentDidMount(){
@@ -16,6 +25,8 @@ export default class Orders extends Component {
             groobies: group.data
         })
     }
+
+    // postOrder(){}  need to setStat post back to false
 
     render() {
 
@@ -30,15 +41,34 @@ export default class Orders extends Component {
         })
         return (
             <div>
-                <div>
-                    
-                </div>
-
-            <div>
-                Orders
+                {!this.state.post
+                ?
+                (<div>
                 {mappedGrub}
-                <Link to='/groups'><button>Back to groups</button></Link>
-            </div>
+                <button onClick={this.handleToggle}>Place Order</button>
+                <Link to='/groups'><button>Back to groups</button></Link>                
+                </div>
+                )
+                :                                
+                (<div>
+                    <input 
+                    value = {this.state.item}
+                    onChange={e=> this.handleChange(e, 'item')}
+                    type='text'
+                    placeholder='item'
+                    />
+                    <input
+                    value = {this.state.price}
+                    onChange={e=> this.handleChange(e, 'price')}
+                    type="number"
+                    step="0.01"
+                    placeholder="0.00"
+                    />
+                    <button onClick={() => this.postOrder()}>Post Order</button>
+                </div>
+                )
+                }
+                    
             </div>
         )   
     }
