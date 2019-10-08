@@ -23,14 +23,21 @@ module.exports = {
         const db = req.app.get('db')
         const created_by = req.session.user.userId
         const {groups_name, date, deadline} = req.body
-        console.log(groups_name, date, deadline, created_by)
 
         db.create_group({ groups_name, date, deadline, created_by})
         .then((result) => {
-        const groups_id = result.groups_id
-        const users_id = result.created_by
-        console.log(groups_id, users_id)
-
+            console.log(result)
+        const groups_id = result[0].groups_id
+        const created_by = result[0].created_by
+        const users_id = created_by
+            console.log(groups_id, created_by)
+        db.add_group_user_myGroups({groups_id, users_id})
+        // .then(()=>)
+        .catch(err => {
+            res.status(500).send("error myGroups")
+            console.log(err)
+        })
+        
 
              //need to get the created_by and the group_id from result and add it to the query to enter it into the members or myGroup table
             res.status(200).send(result)

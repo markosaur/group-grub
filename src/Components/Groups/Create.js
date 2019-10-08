@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default class Crerate extends Component {
     constructor(){
@@ -53,7 +54,7 @@ export default class Crerate extends Component {
                 type='text'
                 placeholder = 'deadline'
                 />
-            <button onClick={() => this.create()}>Create Group</button>
+            <Link to = '/groups'><button onClick={() => this.create()}>Create Group</button></Link>
             </div>
         )
     }
