@@ -7,7 +7,6 @@ export default class extends Component {
             <div>
                 Groups
                 <MyGroups/>
-                console.log(req.body)
             </div>
         )
     }

@@ -22,6 +22,7 @@ app.delete('/auth/logout', authCtrl.logout)
 
 //Group endpoints
 app.get('/api/groups/user', groupsCtrl.getUserGroups)
+app.get('/api/group/:id', groupsCtrl.getGroupOrder)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

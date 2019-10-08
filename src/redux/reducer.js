@@ -1,7 +1,7 @@
 // Initial State
 const initialState = {
-    loggedIn: false,
-    user: null
+    user: null,
+    loggedIn: false
 }
 
 //Action Consts

@@ -19,6 +19,6 @@ export default (
         <Route path = '/available' component = {Available} />
         <Route path = '/creator' component = {Crerate} />
         <Route path = '/mygroups' component = {MyGroups} />
-        <Route path = '/orders' component = {Orders} />
+        <Route path = '/orders/:id' component = {Orders} />
     </Switch>
 )

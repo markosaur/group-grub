@@ -1,4 +1,4 @@
-select g.groups_name
+select g.groups_name, g.groups_id
 from users u
 join myGroups mg on mg.users_id = u.users_id
 join groups g on g.groups_id = mg.groups_id

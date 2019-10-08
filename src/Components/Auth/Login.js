@@ -4,9 +4,6 @@ import axios from 'axios'
 import {updateUser} from '../../redux/reducer'
 import { connect } from 'react-redux'
 
-
-
-
 class Login extends Component {
     constructor() {
         super()
@@ -31,7 +28,7 @@ class Login extends Component {
             console.log(this.props.history)
         }else{
         alert('You have entered an invalid username or password')
-    }
+        }
     }
     render() {
         return (
