@@ -6,7 +6,7 @@ import Login from './Components/Auth/Login'
 import Register from './Components/Auth/Register'
 import Groups from './Components/Groups/Groups'
 import Available from './Components/Groups/Available'
-import Crerate from './Components/Groups/Crerate'
+import Create from './Components/Groups/Create'
 import MyGroups from './Components/Groups/MyGroups'
 import Orders from './Components/Orders/Orders'
 
@@ -17,7 +17,7 @@ export default (
         <Route path = '/register' component = {Register} />
         <Route path = '/groups' component = {Groups} />
         <Route path = '/available' component = {Available} />
-        <Route path = '/creator' component = {Crerate} />
+        <Route path = '/create' component = {Create} />
         <Route path = '/mygroups' component = {MyGroups} />
         <Route path = '/orders/:id' component = {Orders} />
     </Switch>
