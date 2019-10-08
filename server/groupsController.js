@@ -17,6 +17,10 @@ module.exports ={
         } else {
             res.status(404).send('Order not found!')
         }
+    },
+
+    createGroup: async (req, res) => {
+        const db = req.app.get('db')
     }
     
 }

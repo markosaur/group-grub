@@ -40,7 +40,7 @@ export default class MyGroups extends Component {
                 </div>
             )
         })
-
+        
         return (
             <div>
                {mappedUserGroups}
