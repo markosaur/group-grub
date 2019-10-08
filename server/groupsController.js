@@ -12,7 +12,7 @@ module.exports ={
         console.log(req.params)
         const order = await db.get_group_order(+id)
 
-        if(movie) {
+        if(order) {
             res.status(200).send(order)
         } else {
             res.status(404).send('Order not found!')

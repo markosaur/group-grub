@@ -6,25 +6,29 @@ export default class Orders extends Component {
     constructor(){
         super();
         this.state = {
-            group: []
+            groobies: []
         };
     }
 
     async componentDidMount(){
-        const group = await axios.get(`/api/group/${this.props.match.params.groups_id}`)
-        if(group.data === 'Order not found!'){
-            console.log(group.data)
+        const group = await axios.get(`/api/group/${this.props.match.params.id}`)
         this.setState({
-            group: {
-                groups_name : 'Items not found'
-            }
-        })
-    }else {
-        this.setState({
-            group: group.data
+            groobies: group.data
         })
     }
-}
+//         if(group.data === 'Order not found!'){
+//             console.log(group.data)
+//         this.setState({
+//             group: {
+//                 groups_name : 'Items not found'
+//             }
+//         })
+//     }else {
+//         this.setState({
+//             group: group.data
+//         })
+//     }
+// }
 
 // async componentDidUpdate(prevProps){
 //     if(prevProps !== this.props){
@@ -39,11 +43,21 @@ export default class Orders extends Component {
 //     }
 // }
 
+// g.groups_name, u.username, o.item, o.price
+
     render() {
+
+        const mappedGrub = this.state.groobies.map(grub => {
+            return (
+                <div>
+                    <h1>grub.username</h1>
+                </div>
+            )
+        })
         return (
             <div>
                 Orders
-                <h1>{this.state.group.groups_name}</h1>
+                {mappedGrub}
                 <Link to='/groups'><button>Back to groups</button></Link>
             </div>
         )
