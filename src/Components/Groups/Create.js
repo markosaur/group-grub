@@ -54,7 +54,9 @@ export default class Crerate extends Component {
                 type='text'
                 placeholder = 'deadline'
                 />
-            <Link to = '/groups'><button onClick={() => this.create()}>Create Group</button></Link>
+            <Link to = '/groups'>
+                <button onClick={() => this.create()}>Create Group</button>
+            </Link>
             </div>
         )
     }

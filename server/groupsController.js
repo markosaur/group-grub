@@ -42,9 +42,21 @@ module.exports = {
              //need to get the created_by and the group_id from result and add it to the query to enter it into the members or myGroup table
             res.status(200).send(result)
         })
+    },
 
-
-
+    postOrder: (req, res) => {
+        const db = req.app.get('db')
+        const users_id = req.session.user.userId
+        const {item, price, groups_id} = req.body
+        console.log(item, price, groups_id, users_id)
+        db.make_order({users_id, item, price, groups_id})
+        .then(result=> {
+            res.status(200).send(result)
+        })
+        .catch(err => {
+            res.status(500).send("This did not add an order");
+            console.log(err)
+        })
     }
     
 }

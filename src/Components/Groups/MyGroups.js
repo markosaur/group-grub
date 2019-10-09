@@ -18,14 +18,14 @@ export default class MyGroups extends Component {
         })
     }
     
-    // componentDidMount() {
-    //     axios.get('/api/groups/user').then(res => {
-    //         this.setState({ userGroups: res.data })
-    //     })
-    // }
-
-
-
+    async componentDidUpdate(prevProps){
+        if(prevProps !== this.props){
+            const myGroups = await axios.get('/api/groups/user')
+            this.setState({
+                userGroups: myGroups.data
+            })
+        }
+    }
     render() {
 
         const mappedUserGroups = this.state.userGroups.map(group => {
