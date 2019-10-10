@@ -25,6 +25,19 @@ class IndividualOrder extends Component {
         })
     }
 
+    handleUpdateOrder=(id)=>{
+        let updatedOrder ={
+            item: this.state.editItem,
+            price: this.state.editPrice
+        }
+        axios.put(`/api/order/${id}`, updatedOrder)
+        .then(res => {
+            this.props.updateOrder(res.data)
+            //maybe a handle toggle
+        })
+
+    }
+
     render() {
         const id = this.props.user.userId
         console.log(id)
@@ -41,7 +54,7 @@ class IndividualOrder extends Component {
                 {!this.state.edit
                 ?
                 (<div>
-                <h2>{this.props.grub.users_id}</h2>
+                {/* <h2>{this.props.grub.users_id}</h2> */}
                 <h1>{this.props.grub.username}</h1>
                 <h2>{this.props.grub.item}</h2>
                 <h2>${this.props.grub.price}</h2>
@@ -62,7 +75,7 @@ class IndividualOrder extends Component {
                     step = '0.01'
                     placeholder='Edit price here'
                     /> 
-                    <button onClick={()=>this.updateOrder()}>Update Order</button>
+                    <button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update Order</button>
 
                 </div>)
             }

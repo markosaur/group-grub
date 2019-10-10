@@ -57,6 +57,10 @@ module.exports = {
             res.status(500).send("This did not add an order");
             console.log(err)
         })
+    },
+
+    updateOrder: (req, res) => {
+        
     }
     
 }

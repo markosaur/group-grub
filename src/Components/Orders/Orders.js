@@ -28,6 +28,12 @@ export default class Orders extends Component {
         console.log(e.target.value)
     }
 
+    updateOrder = (data) => {
+        this.setState({
+            groobies: data
+        })
+    }
+
     async componentDidMount(){
         const group = await axios.get(`/api/group/${this.props.match.params.id}`)
         this.setState({
@@ -70,7 +76,7 @@ export default class Orders extends Component {
             return (
                 
                     
-                    <IndividualOrder grub={grub} key = {i} />
+                    <IndividualOrder grub={grub} key = {i} updateOrder = {this.updateOrder} />
             
             )
         })
