@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import IndividualOrder from './IndividualOrder'
 
 export default class Orders extends Component {
     constructor(){
@@ -65,14 +66,12 @@ export default class Orders extends Component {
 
     render() {
         console.log(this.state)
-        const mappedGrub = this.state.groobies.map(grub => {
+        const mappedGrub = this.state.groobies.map((grub, i) => {
             return (
-                <div>
-                    <h1>{grub.username}</h1>
-                    <h3>{grub.item}</h3>
-                    <h3>${grub.price}</h3>
-                    {/* <button>update</button> */}
-                </div>
+                
+                    
+                    <IndividualOrder grub={grub} key = {i} />
+            
             )
         })
         return (

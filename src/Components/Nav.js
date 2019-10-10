@@ -16,6 +16,7 @@ class Nav extends Component {
     logout = async () => {
         const res = await axios.delete('/auth/logout')
         this.props.updateUser(null)
+        //need to fix the res, add an alert here!
     }
 
     render() {
