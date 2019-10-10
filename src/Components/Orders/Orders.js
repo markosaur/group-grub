@@ -3,13 +3,14 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 export default class Orders extends Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
             groobies: [],
             post: false,
             item: '',
-            price: 0
+            price: 0,
+            // update: false
         }
     }
 
@@ -44,6 +45,7 @@ export default class Orders extends Component {
 // }
 //Only use component did update if you pass props from the parent to child and you have changed the parent comp and the data sent to child has changed.
 
+
     postOrder() {
         const {item, price} = this.state
         console.log(item, price)
@@ -69,6 +71,7 @@ export default class Orders extends Component {
                     <h1>{grub.username}</h1>
                     <h3>{grub.item}</h3>
                     <h3>${grub.price}</h3>
+                    {/* <button>update</button> */}
                 </div>
             )
         })
