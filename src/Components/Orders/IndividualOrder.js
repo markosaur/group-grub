@@ -28,7 +28,9 @@ class IndividualOrder extends Component {
     handleUpdateOrder=(id)=>{
         let updatedOrder ={
             item: this.state.editItem,
-            price: this.state.editPrice
+            price: this.state.editPrice,
+            orders_id: this.props.grub.orders_id,
+            groups_id: this.props.grub.groups_id
         }
         axios.put(`/api/order/${id}`, updatedOrder)
         .then(res => {
