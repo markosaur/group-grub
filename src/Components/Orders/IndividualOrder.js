@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class IndividualOrder extends Component {
     constructor(){
@@ -33,9 +34,10 @@ class IndividualOrder extends Component {
             groups_id: this.props.grub.groups_id
         }
         axios.put(`/api/order/${id}`, updatedOrder)
-        .then(res => {
-            this.props.updateOrder(res.data)
+        .then(result => {
+            this.props.updateOrder(result.data)
             //maybe a handle toggle
+            this.inputDisplay()
         })
 
     }
@@ -65,19 +67,21 @@ class IndividualOrder extends Component {
                 )
                 :
                 (<div>
-                    <input placeholder='Edit item here' 
-                    onChange={(e)=> this.handleInput(e.target.value)} 
-                    value = {this.state.editItem} type='text' 
+                    <input 
+                    value = {this.state.editItem} 
+                    onChange={e => this.handleInput(e, 'editItem')} 
+                    type='text' 
+                    placeholder='Edit item here' 
                     />
 
                     <input 
                     value = {this.state.editPrice} 
-                    onChange={(e)=> this.handleInput(e.target.value)} 
+                    onChange={e => this.handleInput(e, 'editPrice')} 
                     type='number'
                     step = '0.01'
                     placeholder='Edit price here'
                     /> 
-                    <button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update Order</button>
+                    <Link to={`/orders/${this.props.grub.groups_id}`}><button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update Order</button></Link>
 
                 </div>)
             }

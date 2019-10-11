@@ -32,6 +32,7 @@ export default class Orders extends Component {
         this.setState({
             groobies: data
         })
+        console.log(data)
     }
 
     async componentDidMount(){
