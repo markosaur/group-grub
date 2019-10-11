@@ -63,7 +63,7 @@ module.exports = {
         const db = req.app.get('db')
         const {id} = req.params
         const { item, price, orders_id, groups_id } = req.body
-        console.log( item, price, orders_id )
+        console.log( req.body)
         db.update_order({item, price, orders_id, groups_id})
         .then(result=> {
             res.status(200).send(result);

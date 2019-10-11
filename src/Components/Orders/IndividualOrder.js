@@ -39,7 +39,7 @@ class IndividualOrder extends Component {
             //maybe a handle toggle
             this.inputDisplay()
         })
-
+        
     }
 
     render() {

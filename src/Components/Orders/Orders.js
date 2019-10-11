@@ -28,7 +28,7 @@ export default class Orders extends Component {
         console.log(e.target.value)
     }
 
-    updateOrder = (data) => {
+    updateOrder=(data)=>{
         this.setState({
             groobies: data
         })
@@ -74,6 +74,7 @@ export default class Orders extends Component {
     render() {
         console.log(this.state)
         const mappedGrub = this.state.groobies.map((grub, i) => {
+            console.log(grub)
             return (
                 
                     
