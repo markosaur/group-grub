@@ -43,12 +43,11 @@ class IndividualOrder extends Component {
     }
 
     handleDeleteOrder = () => {
-        let deletedOrder ={
-            groups_id: this.props.grub.groups_id
-        }
-        axios.delete(`/api/order/${this.props.grub.orders_id}`, deletedOrder)
-        .then(res => {
-            this.props.deleteOrder(res.data)
+        let  groups_id = this.props.grub.groups_id
+        
+        axios.delete(`/api/order/${this.props.grub.orders_id}?groups_id=${groups_id}`)
+        .then(result => {
+            this.props.deleteOrder(result.data)
             if(this.state.edit){
                 this.inputDisplay()
             }
@@ -58,6 +57,7 @@ class IndividualOrder extends Component {
     render() {
         const id = this.props.user.userId
         console.log(id)
+
         let button;
         if(id === this.props.grub.users_id){
             button = <button onClick={this.inputDisplay}>Edit</button>
@@ -66,8 +66,11 @@ class IndividualOrder extends Component {
         }
 
         let button2;
-        if(id = this.props.user.userId){
-            button2 
+        if(id === this.props.grub.users_id){
+            // button2 = <button onClick={this.handleDeleteOrder}>Delete</button>
+            button2 = <Link to={`/orders/${this.props.grub.groups_id}`}><button onClick={()=>this.handleDeleteOrder()}>Delete</button></Link>   
+        }else{
+            button2 = null
         }
 
         
@@ -83,7 +86,8 @@ class IndividualOrder extends Component {
                 <h2>{this.props.grub.item}</h2>
                 <h2>${this.props.grub.price}</h2>
                 {button}
-                <Link to={`/orders/${this.props.grub.groups_id}`}><button onClick={()=>this.handleDeleteOrder()}>delete</button></Link>
+                {button2}
+                
                 </div>
                 )
                 :

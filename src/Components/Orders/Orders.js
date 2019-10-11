@@ -39,14 +39,14 @@ export default class Orders extends Component {
         this.setState({
             groobies: data
         })
-        console.log(data)
     }
-
-
+    
+    
     handleDeleteOrder = (data) => {
         this.setState({
             groobies: data
         })
+        console.log(data)
     }
     //componentDidMount runs everytime there is a render or rerender of the page.  changing state forces a rerender of the page.
 
@@ -74,7 +74,7 @@ export default class Orders extends Component {
                 groobies: res.data
             })
             this.handleToggle()
-            console.log(res)
+            // console.log(res)
         })
     }
 

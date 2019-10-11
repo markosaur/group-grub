@@ -79,7 +79,7 @@ module.exports = {
     deleteOrder: (req, res) => {
         const db = req.app.get('db')
         const {id} = req.params
-        const groups_id = req.body
+        const {groups_id} = req.query
         db.delete_order({id, groups_id})
         .then(result=> {
             res.status(200).send(result)
