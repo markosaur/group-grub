@@ -26,6 +26,7 @@ app.get('/api/group/:id', groupsCtrl.getGroupOrder)
 app.post('/api/group', groupsCtrl.createGroup)
 app.post('/api/order', groupsCtrl.postOrder)
 app.put('/api/order/:id', groupsCtrl.updateOrder)
+app.delete('/api/order/:id', groupsCtrl.deleteOrder)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

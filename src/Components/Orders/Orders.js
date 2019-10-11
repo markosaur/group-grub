@@ -14,7 +14,14 @@ export default class Orders extends Component {
             // update: false
         }
     }
-
+    
+    async componentDidMount(){
+        const group = await axios.get(`/api/group/${this.props.match.params.id}`)
+        this.setState({
+            groobies: group.data
+        })
+    }
+    
     handleToggle =()=> {
         this.setState({
             post: !this.state.post
@@ -35,10 +42,10 @@ export default class Orders extends Component {
         console.log(data)
     }
 
-    async componentDidMount(){
-        const group = await axios.get(`/api/group/${this.props.match.params.id}`)
+
+    handleDeleteOrder = (data) => {
         this.setState({
-            groobies: group.data
+            groobies: data
         })
     }
     //componentDidMount runs everytime there is a render or rerender of the page.  changing state forces a rerender of the page.
@@ -78,7 +85,7 @@ export default class Orders extends Component {
             return (
                 
                     
-                    <IndividualOrder grub={grub} key = {i} updateOrder = {this.updateOrder} />
+                    <IndividualOrder grub={grub} key = {i} updateOrder = {this.updateOrder} deleteOrder={this.handleDeleteOrder} />
             
             )
         })

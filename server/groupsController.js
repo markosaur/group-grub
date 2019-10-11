@@ -74,6 +74,20 @@ module.exports = {
         })
 
         
+    },
+    
+    deleteOrder: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        const groups_id = req.body
+        db.delete_order({id, groups_id})
+        .then(result=> {
+            res.status(200).send(result)
+        })
+        .catch(err => {
+            res.status(500).send("whoops something is not right with deleteOrder")
+            console.log(err);
+        })
     }
     
 }
