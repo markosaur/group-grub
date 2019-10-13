@@ -46,7 +46,7 @@ module.exports = {
         if(!user[0]) return res.status(200).send({message: 'Username not found'})
         //Time to hash the password and compare with our db
         const result = bcrypt.compareSync(password, user[0].hash)
-        //if hashes don't match, send a sad response
+        //if hashes don't match , send a sad response
         if (!result) return res.status(200).send({message: 'Incorrect password'})
         //if they do match, add user to sessions
         //deconstruct the username and the users_id from user[0]

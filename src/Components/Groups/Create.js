@@ -57,6 +57,9 @@ export default class Crerate extends Component {
             <Link to = '/groups'>
                 <button onClick={() => this.create()}>Create Group</button>
             </Link>
+            <Link to = '/groups'>
+                <button>Back</button>
+            </Link>
             </div>
         )
     }

@@ -5,7 +5,7 @@ import Home from './Components/Auth/Home'
 import Login from './Components/Auth/Login'
 import Register from './Components/Auth/Register'
 import Groups from './Components/Groups/Groups'
-import Available from './Components/Groups/Available'
+import AvailableGroups from './Components/Groups/AvailableGroups'
 import Create from './Components/Groups/Create'
 import MyGroups from './Components/Groups/MyGroups'
 import Orders from './Components/Orders/Orders'
@@ -16,7 +16,7 @@ export default (
         <Route path = '/login' component={Login} />
         <Route path = '/register' component = {Register} />
         <Route path = '/groups' component = {Groups} />
-        <Route path = '/available' component = {Available} />
+        <Route path = '/availablegroups' component = {AvailableGroups} />
         <Route path = '/create' component = {Create} />
         <Route path = '/mygroups' component = {MyGroups} />
         <Route path = '/orders/:id' component = {Orders} />

@@ -106,7 +106,9 @@ class IndividualOrder extends Component {
                     step = '0.01'
                     placeholder='Edit price here'
                     /> 
-                    <Link to={`/orders/${this.props.grub.groups_id}`}><button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update Order</button></Link>
+                    <Link to={`/orders/${this.props.grub.groups_id}`}>
+                        <button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update Order</button>
+                    </Link>
                 </div>)
             }
 

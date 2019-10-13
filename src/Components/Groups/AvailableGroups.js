@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Available extends Component {
     constructor(){
@@ -16,6 +17,9 @@ export default class Available extends Component {
         return (
             <div>
                 Available
+                <Link to = '/groups'>
+                    <button>Return to Groups</button>
+                </Link>
             </div>
         )
     }

@@ -8,8 +8,12 @@ export default class extends Component {
             <div>
                 Groups
                 <MyGroups/>
-                <Link to = '/create' ><button>Create Group</button></Link>
-                <button>All Groups</button>
+                <Link to = '/create' >
+                    <button>Create Group</button>
+                </Link>
+                <Link to ='/availablegroups'>
+                    <button>Join Group</button>
+                </Link>
             </div>
         )
     }
