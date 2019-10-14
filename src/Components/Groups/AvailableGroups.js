@@ -20,13 +20,19 @@ async componentDidMount() {
     })
 }
 
+handleAddedGroup = (data) => {
+    this.setState({
+        groups: data
+    })
+}
+
     render() {
 
         console.log(this.state)
         const mappedGroups = this.state.groups.map((group, i) => {
             console.log(group)
             return(
-                <JoinGroup group = {group} key = {i} />
+                <JoinGroup group = {group} key = {i} handleAddedGroup = {this.handleAddedGroup} />
             )
             
         })

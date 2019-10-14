@@ -100,6 +100,10 @@ module.exports = {
         }else{
             res.status(404).send('groups not found')
         }
+    },
+
+    joinGroup: async (req, res) => {
+        const db = req.app.get('db')
     }
     
 }
