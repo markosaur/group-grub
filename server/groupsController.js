@@ -92,9 +92,9 @@ module.exports = {
 
     getAvailableGroups: async (req, res) => {
         const db = req.app.get('db')
-        const {groups_id} = req.params
+        const {id} = req.params
         console.log(req.params)
-        const unjoined = await db.available_groups({groups_id})
+        const unjoined = await db.available_groups({users_id: +id})
         if(unjoined){
             res.status(200).send(unjoined)
         }else{

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import JoinGroup from './JoinGroup';
 
-export default class Available extends Component {
+class AvailableGroups extends Component {
     constructor(){
         super();
         this.state = {
@@ -24,13 +25,16 @@ async componentDidMount() {
         console.log(this.state)
         const mappedGroups = this.state.groups.map((group, i) => {
             console.log(group)
-            return
+            return(
+                <JoinGroup group = {group} key = {i} />
+            )
             
         })
 
         return (
             <div>
                 Available
+                {mappedGroups}
                 <Link to = '/groups'>
                     <button>Return to Groups</button>
                 </Link>
