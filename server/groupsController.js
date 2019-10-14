@@ -104,6 +104,14 @@ module.exports = {
 
     joinGroup: async (req, res) => {
         const db = req.app.get('db')
+        const {groups_id, users_id} = req.body
+        const member = await db.join_group({groups_id, users_id})
+        if(member){
+            res.status(200).send(member)
+        }else{
+            res.status(404).send('user not added to group, please try again')
+        }
+        
     }
     
 }
