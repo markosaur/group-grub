@@ -7,9 +7,10 @@ export default class JoinGroup extends Component {
 
     joinGroup() {
         const groups_id = this.props.group.groups_id
-        const users_id = this.props.group.users_id
+        const users_id = this.props.users_id
         axios.post('/api/joingroup', {groups_id, users_id}).then((result)=>{
             this.props.handleAddedGroup(result.data)
+        
         })
     }
 
@@ -23,7 +24,7 @@ export default class JoinGroup extends Component {
                 <h1>{this.props.group.deadline}</h1> */}
                 {/* <h1>{this.props.group.username}</h1> */}
                 <Link to = {`/orders/${this.props.group.groups_id}`}>
-                    <button>Join and place order</button>
+                    <button onClick={() => this.joinGroup()}>Join</button>
                 </Link>
             </div>
         )

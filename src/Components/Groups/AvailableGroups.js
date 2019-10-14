@@ -24,6 +24,7 @@ handleAddedGroup = (data) => {
     this.setState({
         groups: data
     })
+    console.log(data)
 }
 
     render() {
@@ -32,7 +33,7 @@ handleAddedGroup = (data) => {
         const mappedGroups = this.state.groups.map((group, i) => {
             console.log(group)
             return(
-                <JoinGroup group = {group} key = {i} handleAddedGroup = {this.handleAddedGroup} />
+                <JoinGroup group = {group} key = {i} handleAddedGroup = {this.handleAddedGroup}  users_id = {this.props.user.userId}/>
             )
             
         })
