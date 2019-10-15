@@ -24,7 +24,9 @@ class App extends Component {
 
   return (
     <div className="App">
-      {comp}
+      <div>
+        {comp}
+      </div>
       {routes}
     </div>
   );
