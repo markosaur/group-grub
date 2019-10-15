@@ -5,13 +5,21 @@ import {Link} from 'react-router-dom'
 export default class extends Component {
     render() {
         return (
+            <div>
             <div className = "authorization">
-                <div className = "header">
-                Home
+                <div className = "groupGrub">
+                    Group Grub
                 </div>
-
-                <Link to= '/login' ><button>Login</button></Link>
-                <Link to= '/register' ><button>Register</button></Link>
+                <div className = "buttons">
+                    <Link to= '/login' ><button>Login</button></Link>
+                    <Link to= '/register' ><button>Register</button></Link>
+                </div>
+            </div>
+    <div className = "pictures">
+            <div className = "divOne"></div>
+            <div className = "divTwo"></div>
+            <div className = "divThree"></div>
+    </div>
             </div>
         )
     }

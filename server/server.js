@@ -8,6 +8,8 @@ groupsCtrl = require('./groupsController')
 
 const app = express()
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(express.json())
 app.use(session({
     resave: false,

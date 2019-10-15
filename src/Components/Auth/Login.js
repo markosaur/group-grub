@@ -33,22 +33,26 @@ class Login extends Component {
     render() {
         return (
             <div>
-                Login
-                <h3>
+                <div className="loginHeader">
+                    <div className="login">
+                        Login
+                    </div>
+                </div>
+                
                 <input placeholder="username"
                     onChange = {e => this.handleChange(e, 'username')}
                     type = 'text'
                     placeholder = 'Username'
                     />
-                </h3>
-                <h3>
+                
+                
                 <input 
                     placeholder="password"
                     onChange = {e => this.handleChange(e, 'password')}
                     type = 'password'
                     placeholder = 'Password'
                     />
-                </h3>
+                
                 <button onClick={this.login}>Enter</button>
                 <Link to= '/'><button>Cancel</button></Link>
             </div>

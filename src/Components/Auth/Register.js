@@ -38,25 +38,46 @@ class Register extends Component {
     render() {
         return (
             <div>
-                Register
-                <h3>
-                    <input 
-                    placeholder="username"
-                    onChange = {e => this.handleChange(e, 'username')}
-                    type = 'text'
-                    placeholder = 'Username'
-                    />
-                </h3>
-                <h3>
-                    <input 
-                    placeholder="password"
-                    onChange = {e => this.handleChange(e, 'password')}
-                    type = 'password'
-                    placeholder = 'Password'
-                    />
-                </h3>
-                <button onClick={() => this.register()}>Welcome to the Food life</button>
+                <div className="registerHeader">
+                    <div className="register">
+                        Registration
+                    </div>
+                </div>
+
+                <div className = "inputContainer">
+                <div className = "inputBoxes">
+                
+                <p></p>
+                <div className = "input">
+                <input
+                placeholder="username"
+                onChange = {e => this.handleChange(e, 'username')}
+                type = 'text'
+                placeholder = 'Username'
+                />
+                </div>
+                
+                
+                
+                <div className = "input">
+                <input
+                placeholder="password"
+                onChange = {e => this.handleChange(e, 'password')}
+                type = 'password'
+                placeholder = 'Password'
+                />
+
+                
+                </div>
+
+                <div className = "buttonsContainer">
+                <button onClick={() => this.register()}>Register</button>
                 <Link to= '/'><button>Cancel</button></Link>
+                </div>
+                </div></div>
+
+
+
             </div>
         )
     }

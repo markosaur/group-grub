@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss'
+import './styles/reset.css'
 import Nav from './Components/Nav'
 import routes from './routes'
 import {withRouter} from 'react-router-dom' 
