@@ -35,7 +35,11 @@ export default class Crerate extends Component {
     render() {
         return (
             <div>
-                Create
+                <div className="createHeader">
+                    Create
+                </div>
+
+                
                 <input 
                 value = {this.state.groups_name}
                 onChange={e => this.handleChange(e, 'groups_name')}
