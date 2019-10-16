@@ -1,3 +1,48 @@
 .createHeader{
-    @extend .groups
+    @extend .groups;
+    @media screen and (max-width: 500px){
+        font-size: 30px;
+    }
+}
+
+.containerContainer{
+    display: flex;
+    justify-content: center;
+}
+.containerTwo{
+    width: 70vw;
+    height: 400px;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid green 1px;
+}
+
+// .inputBoxesTow{
+//     display: flex;
+//     justify-content: space-evenly;
+//     flex-direction: row;
+
+// }
+
+.inputs{
+    width: 55vw;
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: blue 1px solid;
+}
+
+.btnContain{
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }

@@ -18,11 +18,10 @@ export default class JoinGroup extends Component {
 
         return (
             <div>
-                <h1>{this.props.group.groups_name}</h1>
-                <h1>{this.props.group.groups_id}</h1>
-                {/* <h1>{this.props.group.date}</h1>
-                <h1>{this.props.group.deadline}</h1> */}
-                {/* <h1>{this.props.group.username}</h1> */}
+                <div className="possibles">
+                    <h1>{this.props.group.groups_name}</h1>
+                    <h1>{this.props.group.groups_id}</h1>
+                </div>
                 <Link to = {`/orders/${this.props.group.groups_id}`}>
                     <button onClick={() => this.joinGroup()}>Join</button>
                 </Link>

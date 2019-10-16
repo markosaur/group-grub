@@ -40,10 +40,16 @@ handleAddedGroup = (data) => {
 
         return (
             <div>
-                Available
-                {mappedGroups}
+                <div className="available">
+                    Available
+                </div>
+
+                <div className="avail">
+                    {mappedGroups}
+                </div>
+
                 <Link to = '/groups'>
-                    <button>Return to Groups</button>
+                    <button className="availBtn">Home</button>
                 </Link>
             </div>
         )

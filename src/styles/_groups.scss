@@ -37,11 +37,12 @@
 .btnContainer{
     height: 50px;
     width: 200px;
-    border: solid black;
     display: flex;
     justify-content: space-evenly;
     margin-left: 50px;
     margin-top: 10px;
+    align-items: center;
+
 }
 
 

@@ -36,34 +36,53 @@ export default class Crerate extends Component {
         return (
             <div>
                 <div className="createHeader">
-                    Create
+                    Create A Group
                 </div>
 
+
+                <div className = "containerContainer">
+                <div className="containerTwo">
                 
-                <input 
+                <div className="inputBoxesTwo">
+                
+                <div className="inputs">
+                <input
                 value = {this.state.groups_name}
                 onChange={e => this.handleChange(e, 'groups_name')}
                 type='text'
                 placeholder = 'group name'
-                />                
-                <input 
+                />
+                </div>
+                
+                <div className="inputs">
+                <input
                 value = {this.state.date}
                 onChange={e => this.handleChange(e, 'date')}
                 type='text'
                 placeholder = 'date'
-                />                
-                <input 
+                />
+                </div>
+                
+                <div className="inputs">
+                <input
                 value = {this.state.deadline}
                 onChange={e => this.handleChange(e, 'deadline')}
                 type='text'
                 placeholder = 'deadline'
                 />
+                </div>
+
+                </div>
+                </div>
+                </div>
+
+            <div className="btnContain">
             <Link to = '/groups'>
-                <button onClick={() => this.create()}>Create Group</button>
+            <button onClick={() => this.create()}>Create</button>
             </Link>
             <Link to = '/groups'>
-                <button>Back</button>
-            </Link>
+            <button>Back</button>
+            </Link></div>
             </div>
         )
     }
