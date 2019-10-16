@@ -1,15 +1,11 @@
 .loginHeader{
-    // width: 99.8vw;
-    // height: 10vh;
-    // background-color: lightblue;
-    // border: 2px solid blue;
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
     @extend .registerHeader;
     justify-content: flex-end;
     padding-right: 20px;
     max-width: 98.4vw;
+    @media screen and (max-width: 500px){
+        max-width: 93vw;
+    }
 }
 
 .login{

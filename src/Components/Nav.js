@@ -22,9 +22,11 @@ class Nav extends Component {
     render() {
         return (
             
-            <div>
+            <div className="navBody">
+                <div className ="logout">
                 Navigation
                 <Link to='/'><button onClick={this.logout} >Logout</button></Link>
+                </div>
             </div>
         )
     }

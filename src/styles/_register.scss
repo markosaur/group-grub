@@ -6,6 +6,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @media screen and (max-width: 500px){
+        max-width: 97vw;
+    }
 }
 
 .register{
@@ -46,6 +49,7 @@
     justify-content: space-evenly;
 
 }
+
 
 
 
