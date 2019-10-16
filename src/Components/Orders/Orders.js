@@ -91,36 +91,45 @@ export default class Orders extends Component {
         })
         return (
             <div>
-                {!this.state.post
-                ?
-                (<div>
-                {mappedGrub}
-                <button onClick={this.handleToggle}>Place Order</ button>
-                <Link to='/groups'><button>Back to groups</button></Link>                
-                </div>
-                )
-                :                                
-                (<div>
-                    <input 
-                    value = {this.state.item}
-                    onChange={e => this.handleChange(e, 'item')}
-                    type='text'
-                    placeholder='item'
-                    />
-                    <input
-                    value = {this.state.price}
-                    onChange={e => this.handleChange(e, 'price')}
-                    type="number"
-                    step="0.01"
-                    placeholder="0.00"
-                    />
-                    <button onClick={() => this.postOrder()}>Post Order</button>
-                    <Link to='/groups'><button>Back to groups</button></Link>                                
-                </div>
-                )
-            }
-                    
+                <h4>Make an Order</h4>
+            <div>
+            {!this.state.post
+            ?
+            (<div>
+            <div className="mappedgrub">
+            {mappedGrub}
             </div>
+            
+            <div className="anotherBtnContainer">
+            <button onClick={this.handleToggle}>Place Order</ button>
+            <Link to='/groups'><button>Back to groups</button></Link>
+            </div>
+            </div>
+            )
+            :
+            (<div>
+            <div className="contains">
+            <div className="containedw">
+            <input
+            value = {this.state.item}
+            onChange={e => this.handleChange(e, 'item')}
+            type='text'
+            placeholder='item'
+            />
+            <input
+            value = {this.state.price}
+            onChange={e => this.handleChange(e, 'price')}
+            type="number"
+            step="0.01"
+            placeholder="0.00"
+            /></div></div>
+            <button onClick={() => this.postOrder()}>Post</button>
+            <Link to='/groups'><button>Back</button></Link>
+            </div>
+            )
+            }
+            
+            </div></div>
         )   
     }
 }

@@ -82,9 +82,11 @@ class IndividualOrder extends Component {
                 ?
                 (<div>
                 {/* <h2>{this.props.grub.users_id}</h2> */}
-                <h1>{this.props.grub.username}</h1>
-                <h2>{this.props.grub.item}</h2>
-                <h2>${this.props.grub.price}</h2>
+                <div className="orderInfo">
+                    <h1>{this.props.grub.username}</h1>
+                    <h2>{this.props.grub.item}</h2>
+                    <h2>${this.props.grub.price}</h2>
+                </div>
                 {button}
                 {button2}
                 
@@ -107,7 +109,7 @@ class IndividualOrder extends Component {
                     placeholder='Edit price here'
                     /> 
                     <Link to={`/orders/${this.props.grub.groups_id}`}>
-                        <button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update Order</button>
+                        <button onClick={()=>this.handleUpdateOrder(this.props.grub.users_id)}>Update</button>
                     </Link>
                 </div>)
             }
