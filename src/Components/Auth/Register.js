@@ -47,7 +47,6 @@ class Register extends Component {
                 <div className = "inputContainer">
                 <div className = "inputBoxes">
                 
-                <p></p>
                 <div className = "input">
                 <input
                 placeholder="username"
@@ -58,7 +57,6 @@ class Register extends Component {
                 </div>
                 
                 
-                
                 <div className = "input">
                 <input
                 placeholder="password"
@@ -67,14 +65,14 @@ class Register extends Component {
                 placeholder = 'Password'
                 />
 
-                
                 </div>
 
                 <div className = "buttonsContainer">
                 <button onClick={() => this.register()}>Register</button>
                 <Link to= '/'><button>Cancel</button></Link>
                 </div>
-                </div></div>
+                </div>
+                </div>
 
 
 

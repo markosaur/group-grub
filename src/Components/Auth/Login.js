@@ -39,22 +39,37 @@ class Login extends Component {
                     </div>
                 </div>
                 
-                <input placeholder="username"
-                    onChange = {e => this.handleChange(e, 'username')}
-                    type = 'text'
-                    placeholder = 'Username'
-                    />
+                <div className="container">
+                <div className="inputBox">
                 
-                
+                <div className="inputer">
                 <input 
-                    placeholder="password"
-                    onChange = {e => this.handleChange(e, 'password')}
-                    type = 'password'
-                    placeholder = 'Password'
-                    />
+                placeholder="username"
+                onChange = {e => this.handleChange(e, 'username')}
+                type = 'text'
+                placeholder = 'Username'
+                />
+                </div>
                 
+                
+                <div className="inputer">
+                <input
+                placeholder="password"
+                onChange = {e => this.handleChange(e, 'password')}
+                type = 'password'
+                placeholder = 'Password'
+                />
+
+                </div>
+                
+                <div className = "buttonContainer">
                 <button onClick={this.login}>Enter</button>
                 <Link to= '/'><button>Cancel</button></Link>
+                </div>
+                </div>
+                </div>
+                
+
             </div>
         )
     }
