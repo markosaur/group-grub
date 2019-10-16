@@ -30,11 +30,13 @@ export default class MyGroups extends Component {
 
         const mappedUserGroups = this.state.userGroups.map(group => {
             return (
-                <div key = {group.groups_id}>
+                <div key = {group.groups_id} >
                     
                     <Link to={`/orders/${group.groups_id}`}>
-                        <div>
-                            <h1>{group.groups_name}</h1>
+                        <div className="groupContainer">
+                            <div className="contained">
+                                <h1>{group.groups_name}</h1>
+                            </div>
                         </div>
                     </Link>
                 </div>
@@ -42,7 +44,7 @@ export default class MyGroups extends Component {
         })
         
         return (
-            <div>
+            <div className="mygroups">
                {mappedUserGroups}
             </div>
         )

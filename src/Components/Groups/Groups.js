@@ -5,17 +5,33 @@ import {Link} from 'react-router-dom'
 export default class extends Component {
     render() {
         return (
-            <div>
+            <div className="groupsBody">
                 <div className ="groups">
-                Groups
+                <h3>Groups</h3>
                 </div>
-                <MyGroups/>
-                <Link to = '/create' >
-                    <button>Create Group</button>
-                </Link>
-                <Link to ='/availablegroups'>
-                    <button>Join Group</button>
-                </Link>
+
+                
+                <div>
+                    <MyGroups/>
+                </div>
+
+
+                <div className="btnContainer">
+
+                    <div className="btn">
+                        <Link to = '/create' >
+                        <button>Create</button>
+                        </Link>
+                    </div>
+                    
+                    <div className="btn">
+                        <Link to ='/availablegroups'>
+                        <button>Join</button>
+                        </Link>
+                    </div>
+                    
+                </div>
+
             </div>
         )
     }
