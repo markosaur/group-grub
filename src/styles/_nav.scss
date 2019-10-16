@@ -1,13 +1,22 @@
 .navBody{
-   width: 99.8vw;
-   height: 10vh;
-   height: 30px;
+   width: 98.77vw;
+   height: 55px;
    display: flex;
-   justify-content: flex-end;
+   justify-content: space-between;
    align-items: center;
+//    border: black solid 5px;
     
 }
 
-.logout{
-    float: right;
+.delicious{
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+button{
+    margin-right: 5px;
+    font-family: cursive;
+
 }

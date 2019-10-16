@@ -23,10 +23,12 @@ class Nav extends Component {
         return (
             
             <div className="navBody">
-                <div className ="logout">
-                Navigation
+            <div className="delicious"><h3>Live Deliciously</h3></div>    
+               
+            <div className="button">
                 <Link to='/'><button onClick={this.logout} >Logout</button></Link>
-                </div>
+            </div>    
+                
             </div>
         )
     }

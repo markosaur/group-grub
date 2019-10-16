@@ -6,7 +6,9 @@ export default class extends Component {
     render() {
         return (
             <div>
+                <div className ="groups">
                 Groups
+                </div>
                 <MyGroups/>
                 <Link to = '/create' >
                     <button>Create Group</button>
