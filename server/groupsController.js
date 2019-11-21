@@ -96,11 +96,13 @@ module.exports = {
         console.log(req.params)
         const unjoined = await db.available_groups({users_id: +id})
         if(unjoined){
+            //do a filter or for loop to check number of people in group and determine max
             res.status(200).send(unjoined)
         }else{
             res.status(404).send('groups not found')
         }
-    },
+
+    },//can put logic for max number of members here, do not pull if it exceeds
 
     joinGroup: async (req, res) => {
         const db = req.app.get('db')

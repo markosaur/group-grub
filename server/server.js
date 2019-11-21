@@ -26,6 +26,7 @@ app.delete('/auth/logout', authCtrl.logout)
 app.get('/api/groups/user', groupsCtrl.getUserGroups)
 app.get('/api/group/:id', groupsCtrl.getGroupOrder)
 app.get('/api/groups/:id', groupsCtrl.getAvailableGroups)
+//put logic of max number of members
 app.post('/api/group', groupsCtrl.createGroup)
 app.post('/api/joingroup', groupsCtrl.joinGroup)
 app.post('/api/order', groupsCtrl.postOrder)

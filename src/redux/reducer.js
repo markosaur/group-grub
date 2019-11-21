@@ -18,6 +18,7 @@ export const updateUser = (userObj) => {
 
 //Reducer Function
 const reducer = (state = initialState, action) => {
+
     switch(action.type) {
         case UPDATE_USER:
             return {...state, user: action.payload}
