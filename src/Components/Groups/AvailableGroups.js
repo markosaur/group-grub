@@ -39,7 +39,7 @@ handleAddedGroup = (data) => {
         })
 
         return (
-            <div>
+            <div className="available_container">
                 <div className="available">
                     Available
                 </div>

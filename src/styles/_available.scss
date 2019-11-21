@@ -1,5 +1,17 @@
+.available_container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 25vw;
+
+}
+
 .avail{
     @extend .mygroups;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
 }
 
 .possibles{
