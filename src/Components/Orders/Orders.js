@@ -90,6 +90,7 @@ export default class Orders extends Component {
             )
         })
         return (
+            <div className="center">
             <div>
                 <h4>Make an Order</h4>
             <div>
@@ -129,7 +130,9 @@ export default class Orders extends Component {
             )
             }
             
-            </div></div>
+            </div>
+            </div>
+            </div>
         )   
     }
 }

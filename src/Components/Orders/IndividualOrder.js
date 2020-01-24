@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
+//need to make this page more eye appealing, add a header with a nice picture
 
 class IndividualOrder extends Component {
     constructor(){
